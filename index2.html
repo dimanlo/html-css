@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Картошечка - магазин картошки</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --primary-color: #8bc34a;
+            --secondary-color: #689f38;
+            --accent-color: #ff9800;
+            --text-color: #333;
+            --light-color: #f5f5f5;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+        }
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: var(--secondary-color);
+        }
+
+        nav a:focus {
+            outline: 2px solid var(--accent-color);
+        }
+
+        nav a:active {
+            background-color: var(--accent-color);
+        }
+        section {
+            padding: 2rem;
+            margin: 1rem auto;
+            max-width: 1200px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        section h2 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #e8f5e8;
+        }
+        form {
+            display: grid;
+            gap: 1rem;
+            max-width: 600px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+        }
+
+        input, select, textarea {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: 2px solid var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        input:invalid {
+            border-color: #ff4444;
+        }
+
+        input:valid {
+            border-color: #4CAF50;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        button:active {
+            background-color: var(--accent-color);
+        }
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+        ul li::before {
+            content: "🥔";
+            margin-right: 0.5rem;
+        }
+
+        ol li::marker {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        video, audio {
+            max-width: 100%;
+            margin: 1rem 0;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        address {
+            font-style: normal;
+            margin: 1rem 0;
+        }
+        footer p::before {
+            content: "© ";
+        }
+        .highlight {
+            background-color: #fff9c4;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .warning {
+            color: #ff4444;
+            font-weight: bold;
+        }
+        img, video, audio {
+            display: block;
+            max-width: 100%;
+        }
+        section > h2 {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        address a {
+            color: var(--accent-color);
+        }
+
+        address a:visited {
+            color: #ffb74d;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Картошечка</h1>
+        <p>Лучшая картошка в вашем регионе!</p>
+        
+        <nav>
+            <ul>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#products">Наша картошка</a></li>
+                <li><a href="#order">Заказать</a></li>
+                <li><a href="#delivery">Доставка</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>О нашем магазине</h2>
+            <p>Мы выращиваем и продаем самую вкусную и свежую картошку уже более 10 лет!</p>
+            <p class="highlight">Все сорта выращены в экологически чистых условиях</p>
+            <img src="potato-field.jpg" alt="Поле с картошкой" width="400">
+        </section>
+
+        <section id="products">
+            <h2>Наша картошка</h2>
+            
+            <table>
+                <caption>Ассортимент картошки</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Сорт</th>
+                        <th scope="col">Описание</th>
+                        <th scope="col">Цена за кг</th>
+                        <th scope="col">Наличие</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ред Скарлет</td>
+                        <td>Красная кожура, желтая мякоть, идеальна для жарки</td>
+                        <td>50 руб.</td>
+                        <td>В наличии</td>
+                    </tr>
+                    <tr>
+                        <td>Гала</td>
+                        <td>Желтая кожура, нежная текстура, для пюре и супов</td>
+                        <td>45 руб.</td>
+                        <td>В наличии</td>
+                    </tr>
+                    <tr>
+                        <td>Невский</td>
+                        <td>Белая кожура, рассыпчатая, для запекания</td>
+                        <td>55 руб.</td>
+                        <td class="warning">Заканчивается</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <article>
+                <h3>Специальные предложения</h3>
+                <ul>
+                    <li>Картошка "Молодая" - 70 руб./кг</li>
+                    <li>Набор "Картофель фри" - 60 руб./кг</li>
+                    <li>Экологически чистая картошка - 80 руб./кг</li>
+                </ul>
+            </article>
+        </section>
+
+        <section id="order">
+            <h2>Заказать картошку</h2>
+            
+            <form action="/order" method="post">
+                <fieldset>
+                    <legend>Контактная информация</legend>
+                    
+                    <label for="name">Ваше имя:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="phone">Телефон:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Информация о заказе</legend>
+                    
+                    <label for="potato-type">Сорт картошки:</label>
+                    <select id="potato-type" name="potato-type" required>
+                        <option value="">Выберите сорт</option>
+                        <option value="red-scarlet">Ред Скарлет</option>
+                        <option value="gala">Гала</option>
+                        <option value="nevsky">Невский</option>
+                        <option value="young">Молодая</option>
+                    </select>
+
+                    <label for="delivery-date">Дата доставки:</label>
+                    <input type="date" id="delivery-date" name="delivery-date" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Адрес доставки</legend>
+                    
+                    <label for="address">Адрес доставки:</label>
+                    <textarea id="address" name="address" rows="3" required></textarea>
+                    
+                    <label for="comments">Комментарий к заказу:</label>
+                    <textarea id="comments" name="comments" rows="3"></textarea>
+                </fieldset>
+                
+                <button type="submit">Заказать картошку</button>
+            </form>
+        </section>
+
+        <section id="delivery">
+            <h2>Доставка и оплата</h2>
+            <ol>
+                <li>Выберите сорт и количество картошки</li>
+                <li>Заполните форму заказа</li>
+                <li>Мы свяжемся с вами для подтверждения</li>
+                <li>Доставляем картошку в удобное время</li>
+                <li>Оплата при получении</li>
+            </ol>
+        </section>
+
+        <section id="video">
+            <h2>Наша картошка вживую</h2>
+            <video controls width="400" poster="potato-preview.jpg">
+                <source src="vlc-record-2025-09-26-22h01m52s-Lethal Company 2023.12.05 - 18.14.07.13.DVR.mp4-.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+        </section>
+
+        <section id="audio">
+            <h2>Картофельная песня</h2>
+            <audio controls>
+                <source src="oreshki-big-bob.mp3" type="audio/mp3">
+                Ваш браузер не поддерживает аудио.
+            </audio>
+        </section>
+    </main>
+
+    <footer id="contacts">
+        <h2>Контакты</h2>
+        <address>
+            <p>Телефон: <a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
+            <p>Email: <a href="mailto:info@kartoshechka.ru">info@kartoshechka.ru</a></p>
+            <p>Адрес: г. Москва, ул. Картофельная, д. 5</p>
+        </address>
+        
+        <p>Картошечка, 2024. Все права защищены.</p>
+    </footer>
+</body>
+</html>
