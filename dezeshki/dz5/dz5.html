@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Картошечка - магазин картошки</title>
+    <link rel="stylesheet" href="dz5.css">
+</head>
+<body>
+    <header>
+        <h1>Картошечка</h1>
+        <p>Лучшая картошка в вашем регионе!</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#products">Наша картошка</a></li>
+            <li><a href="#order">Заказать</a></li>
+            <li><a href="#delivery">Доставка</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="about">
+            <h2>О нашем магазине</h2>
+            <p>Мы выращиваем и продаем самую вкусную и свежую картошку уже более 10 лет!</p>
+            <p class="highlight">Все сорта выращены в экологически чистых условиях</p>
+        </section>
+        
+        <section id="products">
+            <h2>Наша картошка</h2>
+            
+            <table>
+                <caption>Ассортимент картошки</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Сорт</th>
+                        <th scope="col">Описание</th>
+                        <th scope="col">Цена за кг</th>
+                        <th scope="col">Наличие</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ред Скарлет</td>
+                        <td>Красная кожура, желтая мякоть, идеальна для жарки</td>
+                        <td>50 руб.</td>
+                        <td>В наличии</td>
+                    </tr>
+                    <tr>
+                        <td>Гала</td>
+                        <td>Желтая кожура, нежная текстура, для пюре и супов</td>
+                        <td>45 руб.</td>
+                        <td>В наличии</td>
+                    </tr>
+                    <tr>
+                        <td>Невский</td>
+                        <td>Белая кожура, рассыпчатая, для запекания</td>
+                        <td>55 руб.</td>
+                        <td class="warning">Заканчивается</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <article>
+                <h3>Специальные предложения</h3>
+                <ul>
+                    <li>Картошка "Молодая" - 70 руб./кг</li>
+                    <li>Набор "Картофель фри" - 60 руб./кг</li>
+                    <li>Экологически чистая картошка - 80 руб./кг</li>
+                </ul>
+            </article>
+        <section id="product-cards">
+            <h2>Наши продукты</h2>
+            <div class="product-cards grid-layout">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200?text=Ред+Скарлет" alt="Ред Скарлет">
+                    <h3>Ред Скарлет</h3>
+                    <p>Красная кожура, желтая мякоть, идеальна для жарки</p>
+                    <p class="price">50 руб./кг</p>
+                    <p class="availability">В наличии</p>
+                    <button>Добавить в заказ</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200?text=Гала" alt="Гала">
+                    <h3>Гала</h3>
+                    <p>Желтая кожура, нежная текстура, для пюре и супов</p>
+                    <p class="price">45 руб./кг</p>
+                    <p class="availability">В наличии</p>
+                    <button>Добавить в заказ</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200?text=Невский" alt="Невский">
+                    <h3>Невский</h3>
+                    <p>Белая кожура, рассыпчатая, для запекания</p>
+                    <p class="price">55 руб./кг</p>
+                    <p class="availability warning">Заканчивается</p>
+                    <button>Добавить в заказ</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200?text=Молодая" alt="Молодая">
+                    <h3>Молодая</h3>
+                    <p>Свежая молодая картошка, собранная ранним утром</p>
+                    <p class="price">70 руб./кг</p>
+                    <p class="availability">В наличии</p>
+                    <button>Добавить в заказ</button>
+                </div>
+            </div>
+        </section>
+        </section>
+        
+        <section id="order">
+            <h2>Заказать картошку</h2>
+            
+            <form action="/order" method="post">
+                <fieldset>
+                    <legend>Контактная информация</legend>
+                    
+                    <label for="name">Ваше имя:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="phone">Телефон:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Информация о заказе</legend>
+                    
+                    <label for="potato-type">Сорт картошки:</label>
+                    <select id="potato-type" name="potato-type" required>
+                        <option value="">Выберите сорт</option>
+                        <option value="red-scarlet">Ред Скарлет</option>
+                        <option value="gala">Гала</option>
+                        <option value="nevsky">Невский</option>
+                        <option value="young">Молодая</option>
+                    </select>
+                    
+                    <label for="delivery-date">Дата доставки:</label>
+                    <input type="date" id="delivery-date" name="delivery-date" required>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Адрес доставки</legend>
+                    
+                    <label for="address">Адрес доставки:</label>
+                    <textarea id="address" name="address" rows="3" required></textarea>
+                    
+                    <label for="comments">Комментарий к заказу:</label>
+                    <textarea id="comments" name="comments" rows="3"></textarea>
+                </fieldset>
+                
+                <button type="submit">Заказать картошку</button>
+            </form>
+        </section>
+        
+        <section id="delivery">
+            <h2>Доставка и оплата</h2>
+            <ol>
+                <li>Выберите сорт и количество картошки</li>
+                <li>Заполните форму заказа</li>
+                <li>Мы свяжемся с вами для подтверждения</li>
+                <li>Доставляем картошку в удобное время</li>
+                <li>Оплата при получении</li>
+            </ol>
+        </section>
+    </main>
+    
+    <footer id="contacts">
+        <h2>Контакты</h2>
+        <address>
+            <p>Телефон: <a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
+            <p>Email: <a href="mailto:info@kartoshechka.ru">info@kartoshechka.ru</a></p>
+            <p>Адрес: г. Москва, ул. Картофельная, д. 5</p>
+        </address>
+        
+        <p>Картошечка, 2024. Все права защищены.</p>
+    </footer>
+</body>
+</html>
