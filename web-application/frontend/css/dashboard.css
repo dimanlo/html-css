@@ -1,0 +1,114 @@
+.dashboard-section {
+    margin-bottom: 3rem;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.chart-container {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 1rem;
+}
+
+.filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+#reviewsFilter, #reviewsSearch {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+#reviewsFilter {
+    background: white;
+}
+
+#reviewsSearch {
+    flex: 1;
+    min-width: 200px;
+}
+
+.reviews-table-container, .orders-table-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.reviews-table, .orders-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.reviews-table th, .reviews-table td,
+.orders-table th, .orders-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.reviews-table th, .orders-table th {
+    background: #f8f9fa;
+    font-weight: bold;
+    color: #333;
+}
+
+.reviews-table tr:hover, .orders-table tr:hover {
+    background: #f8f9fa;
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+}
+
+.stars-rating {
+    color: #ffc107;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .chart-container {
+        height: 300px;
+    }
+    
+    .filters {
+        flex-direction: column;
+    }
+    
+    #reviewsSearch {
+        min-width: auto;
+    }
+    
+    .reviews-table th, .reviews-table td,
+    .orders-table th, .orders-table td {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .chart-container {
+        height: 250px;
+    }
+    
+    .reviews-table th, .reviews-table td,
+    .orders-table th, .orders-table td {
+        padding: 0.3rem;
+        font-size: 0.8rem;
+    }
+    
+    .reviews-table th:nth-child(2),
+    .reviews-table td:nth-child(2) {
+        display: none;
+    }
+}

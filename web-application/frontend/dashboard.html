@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chart.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header-title">Личный кабинет</h1>
+            <nav class="header-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Главная</a></li>
+                    <li><a href="#" class="nav-link active">Личный кабинет</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <section class="dashboard-section">
+                <h2 class="section-title">Мои отзывы</h2>
+                <div class="filters">
+                    <select id="reviewsFilter">
+                        <option value="all">Все отзывы</option>
+                        <option value="5">5 звезд</option>
+                        <option value="4">4 звезды</option>
+                        <option value="3">3 звезды</option>
+                        <option value="2">2 звезды</option>
+                        <option value="1">1 звезда</option>
+                    </select>
+                    <input type="text" id="reviewsSearch" placeholder="Поиск по отзывам...">
+                </div>
+                <div class="reviews-table-container">
+                    <table class="reviews-table">
+                        <thead>
+                            <tr>
+                                <th>Товар</th>
+                                <th>Отзыв</th>
+                                <th>Оценка</th>
+                                <th>Дата</th>
+                            </tr>
+                        </thead>
+                        <tbody id="reviewsTableBody">
+                            <tr>
+                                <td colspan="4" class="loading">Загрузка отзывов...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Магазин товаров. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="js/dashboard.js" type="module"></script>
+</body>
+</html>
